@@ -7,9 +7,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Requirments
 
-* Visual Studio 2015 or later - [Download](https://www.microsoft.com/en-us/download/details.aspx?id=30682)
+* Visual Studio 2015 or later - [Download](https://visualstudio.microsoft.com/vs/older-downloads/)
 * Microsoft SQL Server Express 2012 or later - [Download](https://www.microsoft.com/en-us/download/details.aspx?id=29062)
-* Microsoft .NET framework 4.5 or later - [Download](https://www.microsoft.com/en-us/download/details.aspx?id=30653)
+* Microsoft .NET framework 4.5.2 or later - [Download](https://support.microsoft.com/en-us/help/2901907/microsoft-net-framework-4-5-2-offline-installer-for-windows-server-201)
 
 ## Running this app
 
