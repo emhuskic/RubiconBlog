@@ -15,5 +15,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone this GitHub repository
 2. Open `BlogAssignment.sln` with Visual Studio;
-3. If needed, update the connection string in the `web.config` acording to the SQL Server instance installed;   
-4. Hit `Ctrl` + `F5`.
+3. If needed, update the connection string in the `web.config` acording to the SQL Server instance installed;  
+4. Open Package Manager Console, and type in 'update-database', it will seed the database
+5. Hit `Ctrl` + `F5`.
