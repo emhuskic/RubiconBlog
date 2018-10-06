@@ -49,13 +49,14 @@ namespace RubiconBlog.DAL
             return context.BlogPosts.Where(post => post.Slug == slug).SingleOrDefault();
         }
 
-        public void InsertPost(BlogPost post)
+        public BlogPost InsertPost(BlogPost post)
         {
             post.CreatedAt = DateTime.Now;
             post.UpdatedAt = DateTime.Now;
             post.Slug = GenerateSlug(post.Title);
             context.BlogPosts.Add(post);
             Save();
+            return post;
         }
 
         public void DeletePost(string slug)
@@ -68,7 +69,7 @@ namespace RubiconBlog.DAL
             }
         }
 
-        public void UpdatePost(BlogPost post)
+        public BlogPost UpdatePost(BlogPost post)
         {
             var existingPost = context.BlogPosts.Where(p => p.Slug == post.Slug).SingleOrDefault();
             if (existingPost != null)
@@ -85,7 +86,9 @@ namespace RubiconBlog.DAL
                 existingPost.UpdatedAt = DateTime.Now;
                 context.Entry(existingPost).State = EntityState.Modified;
                 Save();
+                return existingPost;
             }
+            return null;
         }
 
 

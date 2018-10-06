@@ -45,7 +45,7 @@ namespace RubiconBlog.Controller
             }
             catch (Exception ex)
             {
-                return BadRequest("An error happened");
+                return BadRequest("An error happened. This is what the app says: " + ex.Message);
             }
         }
         public IHttpActionResult Get(string tag)
@@ -68,7 +68,7 @@ namespace RubiconBlog.Controller
             }
             catch (Exception ex)
             {
-                return BadRequest("An error happened");
+                return BadRequest("An error happened. This is what the app says: " + ex.Message);
             }
         }
         
@@ -81,12 +81,14 @@ namespace RubiconBlog.Controller
                     return BadRequest("Description, body and title are required.");
                 var postDto = Mapper.Map<BlogPostCreateModel, BlogPost>(req.BlogPost);
                 postDto.TagList = makeTagList(req.BlogPost.TagList);
-                blogRepository.InsertPost(postDto);
-                return Ok();
+                var blogPostDto = blogRepository.InsertPost(postDto);
+                BlogPostViewModel post = Mapper.Map<BlogPost, BlogPostViewModel>(blogPostDto);
+                post.TagList = blogPostDto.TagList.Select(o => o.Name).ToList();
+                return Ok(new { blogpost = post });
             }
             catch (Exception ex)
             {
-                return BadRequest("An error happened");
+                return BadRequest("An error happened. This is what the app says: " + ex.Message);
             }
         }
 
@@ -98,12 +100,14 @@ namespace RubiconBlog.Controller
             {
                 wrapper.BlogPost.Slug = slug;
                 var postDto = Mapper.Map<BlogPostUpdateModel, BlogPost>(wrapper.BlogPost);  //  
-                blogRepository.UpdatePost(postDto);
-                return Ok();
+                var blogPostDto = blogRepository.UpdatePost(postDto);
+                BlogPostViewModel post = Mapper.Map<BlogPost, BlogPostViewModel>(blogPostDto);
+                post.TagList = blogPostDto.TagList.Select(o => o.Name).ToList();
+                return Ok(new { blogPost = post });
             }
             catch (Exception ex)
             {
-                return BadRequest("An error happened");
+                return BadRequest("An error happened. This is what the app says: " + ex.Message);
             }
         }
 
@@ -118,7 +122,7 @@ namespace RubiconBlog.Controller
             }
             catch(Exception ex)
             {
-                return BadRequest("An error happened");
+                return BadRequest("An error happened. This is what the app says: " + ex.Message);
             }
         }
         [System.Web.Http.Route("api/posts/{slug}")]
@@ -140,7 +144,7 @@ namespace RubiconBlog.Controller
             }
             catch (Exception ex)
             {
-                return BadRequest("An error happened");
+                return BadRequest("An error happened. This is what the app says: " + ex.Message);
             }
         }
 
@@ -166,8 +170,6 @@ namespace RubiconBlog.Controller
                 {
                     Tag newTag = new Tag();
                     newTag.Name = tag;
-                    //context.Tags.Add(newTag);
-                    //context.SaveChanges();
                     TagList.Add(newTag);
                 }
             }

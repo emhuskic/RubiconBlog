@@ -10,9 +10,9 @@ namespace RubiconBlog.DAL
     {
         IEnumerable<BlogPost> GetPosts(string tag);
         BlogPost GetPostBySlug(string slug);
-        void InsertPost(BlogPost post);
+        BlogPost InsertPost(BlogPost post);
         void DeletePost(string slug);
-        void UpdatePost(BlogPost post);
+        BlogPost UpdatePost(BlogPost post);
         IEnumerable<Tag> GetTags();
         Tag GetTagByName(string tagName);
        void Save();

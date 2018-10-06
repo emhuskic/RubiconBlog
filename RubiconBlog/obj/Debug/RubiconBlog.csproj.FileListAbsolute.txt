@@ -71,3 +71,4 @@ c:\users\emina\documents\visual studio 2015\Projects\RubiconBlog\RubiconBlog\bin
 c:\users\emina\documents\visual studio 2015\Projects\RubiconBlog\RubiconBlog\bin\AutoMapper.pdb
 c:\users\emina\documents\visual studio 2015\Projects\RubiconBlog\RubiconBlog\bin\AutoMapper.xml
 c:\users\emina\documents\visual studio 2015\Projects\RubiconBlog\RubiconBlog\bin\System.ValueTuple.xml
+C:\Users\Emina\Documents\Visual Studio 2015\Projects\RubiconBlog\RubiconBlog\obj\Debug\RubiconBlog.Migrations.Uniqueslugindb.resources

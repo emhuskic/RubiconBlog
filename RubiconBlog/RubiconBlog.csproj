@@ -221,6 +221,10 @@
     <Compile Include="Migrations\201810040844393_TagList as list of Tags 2.Designer.cs">
       <DependentUpon>201810040844393_TagList as list of Tags 2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810061148576_Unique slug in db.cs" />
+    <Compile Include="Migrations\201810061148576_Unique slug in db.Designer.cs">
+      <DependentUpon>201810061148576_Unique slug in db.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\BlogPost.cs" />
     <Compile Include="Model\Tag.cs" />
@@ -250,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810040844393_TagList as list of Tags 2.resx">
       <DependentUpon>201810040844393_TagList as list of Tags 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810061148576_Unique slug in db.resx">
+      <DependentUpon>201810061148576_Unique slug in db.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

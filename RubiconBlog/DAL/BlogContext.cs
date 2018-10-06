@@ -21,6 +21,7 @@ namespace RubiconBlog.DAL
         {
             modelBuilder.Configurations.Add(new BlogPost.PostMapping());
             
+
         }
     }
 }
