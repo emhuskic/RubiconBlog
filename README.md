@@ -18,3 +18,12 @@ These instructions will get you a copy of the project up and running on your loc
 3. If needed, update the connection string in the `web.config` acording to the SQL Server instance installed;  
 4. Open Package Manager Console, and type in 'update-database', it will seed the database
 5. Hit `Ctrl` + `F5`.
+6. Use Postman or whatever tool you'd like to test..
+
+
+## Notes
+
+* Slug is unique for a Blog post, so you cannot create 2 posts with the same titles (slugs). 
+* API controller is in: `Controller\PostsController.cs` class
+* Repository in which all the magic happens (by magic I mean data manipulation in the database) is in:  `DAL\BlogRepository.cs`
+* AutoMapper and API configuration is in the Configuration folder
